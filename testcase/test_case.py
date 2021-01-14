@@ -14,8 +14,16 @@ class Testcase:
 
         assert "shinobu" in result
 
+
+
+
+
+
+
+
     # def test_add_dep_failed(self):
-    #     self.main.login()
-    #     result = self.main.goto_list().goto_add_dep().add_Dep().get_dep()
+    #     self.main.login().goto_contacts().goto_add_dep().add_Dep()
+    #     result = self.contacts.get_dep()
     #
     #     assert "shinobu" not in result
+

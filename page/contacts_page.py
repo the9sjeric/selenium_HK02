@@ -15,7 +15,7 @@ class Contacts(BaseRule):
         pass
 
     def get_dep(self):
-        dep_webelment_list = self.driver.find_elements_by_xpath('//*[@class="jstree-anchor"]')
+        dep_webelment_list = self.driver.find_elements_by_xpath("//*[@class='jstree-anchor']")
         dep_list = []
         for i in dep_webelment_list:
             dep_list.append(i.text)
