@@ -3,7 +3,7 @@
 """
 from page.base import BaseRule
 from page.contacts_add_dep import Add_Dep
-
+from time import sleep
 # 通讯录页面
 class Contacts(BaseRule):
 
@@ -17,10 +17,16 @@ class Contacts(BaseRule):
         pass
 
     # 提取部门列表
-    def get_dep(self):
-        dep_webelment_list = self.driver.find_elements_by_xpath("//*[@class='jstree-anchor']")
+    def get_dep(self, depname):
+        self.driver.find_element_by_xpath('//*[@id="memberSearchInput"]').send_keys(depname)
+        sleep(3)
+        dep_webelment_list = self.driver.find_elements_by_id("search_party_list")
         dep_list = []
         for i in dep_webelment_list:
             dep_list.append(i.text)
+        # dep_webelment_list = self.driver.find_elements_by_xpath("//*[@class='jstree-anchor']")
+        # dep_list = []
+        # for i in dep_webelment_list:
+        #     dep_list.append(i.text)
 
         return dep_list

@@ -1,6 +1,6 @@
 from page.work_weixin_page import Work_WeiXin
 from page.contacts_page import Contacts
-
+from time import sleep
 
 class Testcase:
 
@@ -12,7 +12,8 @@ class Testcase:
     # 新增部门并断言新增是否成功
     def test_add_dep(self):
         self.main.login().goto_contacts().goto_add_dep().add_Dep("shinobu")
-        result = self.contacts.get_dep()
+        sleep(3)
+        result = self.contacts.get_dep("shinobu")
 
         assert "shinobu" in result
 

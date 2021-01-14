@@ -3,7 +3,7 @@
 """
 
 from page.base import BaseRule
-
+from time import sleep
 class Add_Dep(BaseRule):
 
     # 新增部门 depname
@@ -14,6 +14,7 @@ class Add_Dep(BaseRule):
         self.driver.find_element_by_css_selector(
             ".qui_dialog_body.ww_dialog_body [id='1688850780039479_anchor']").click()
         self.driver.find_element_by_xpath("//*[@id='__dialog__MNDialog__']/div/div[3]/a[1]").click()
+        sleep(5)
 
 
 
